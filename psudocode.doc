@@ -1,0 +1,68 @@
+Game Name: Crystal Collector
+
+Goal: Match your total score to the random number
+
+Rules: Start the Game displaying a random number. When user 
+    clicks on a crystal it will reveal a random
+    value. The random value will become the user's score. Each click
+    adds to the user's score. If the user's score is equal to the random
+    number the user wins. If the user's score is greater than the random
+    number the user loses. The game restarts whenever the player wins or loses
+    Tally the number of wins and losses. Do not refresh the page.
+
+    **Notes**
+    The random number shown at the start of the game should be between 19 - 120.
+    Each crystal should have a random hidden value between 1 - 12.
+
+    //Psuedocode for Java Script
+
+    //To start the game
+    * on page load generate a random number between 19-120
+        return the Target to the console
+        Update the Target number placeholder on the screen
+
+    * on click of a Crystal generate a random number between 1-12
+        return the crystal number to the console
+        update user total score with the number
+        check to see if the number is equal to or greater than the Target number
+        Update the Crystal number placholder on the screen
+
+    *Game Reset,
+        Generate a new Target Number between 19-120
+        return the Target number to teh console,
+        Update the Target number placeholder on the screen,
+        update total score to 0
+        Remove any displayed crystal numbers
+        update total score to zero
+
+    * When user wins
+        add 1 to wins
+        reset the game
+
+    * When the user loses,
+        add 1 to losses
+        reset the game
+
+    // Variable Tracking
+        goal = targetNumber
+        wins
+        losses
+        totalScore
+
+    // HTML Setup,
+        ID - goal = targetNumber
+        ID - wins
+        ID - losses
+        ID - totalScore
+        ID - each individual jewel
+
+
+
+
+
+
+
+
+
+
+    
