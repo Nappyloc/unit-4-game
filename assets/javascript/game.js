@@ -12,6 +12,8 @@ var score = 0
 // Generate Goal and Hide Jewel text on start of Game
 $( "#but" ).on( "click", function ()
 {
+  totalScore = []
+  $( "#totalScore" ).text( "Total Score: 0 " )
   // Call function to generate the Goal
 
   // Update the goal on the DOM
@@ -28,6 +30,8 @@ $( "#but" ).on( "click", function ()
 
   // Update Jewel numbers on DOM
   updateJewels()
+
+  // Calculate Score
 
 
 
