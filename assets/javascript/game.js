@@ -1,12 +1,20 @@
+
+
 // Global Variables
+var jewels = genGemNumbs();
+var wins = 0
+var losses = 0
+var totalScore = []
+var score = 0
+var jewel1 = jewels[ 0 ];
+var jewel2 = jewels[ 1 ];
 
 
-// Start Game button Click Functions
-/* generate goal and jewel numbers*/
+// Generate Goal and Hide Jewel text on start of Game
 $( "#but" ).on( "click", function ()
 {
   // Call function to generate the Goal
-  genGoal();
+
   // Update the goal on the DOM
   $( "#goal" ).text( "Goal: " + genGoal() )
 
@@ -14,9 +22,16 @@ $( "#but" ).on( "click", function ()
   $( "#jn1" ).hide()
   $( "#jn2" ).hide()
   $( "#jn3" ).hide()
-  $( "#jn4" ).hide();
+  $( "#jn4" ).hide()
 
-  // Generate Jewel Numbers
+  // Generate Jewel Score Numbers
+  genGemNumbs()
+
+  // Update Jewel numbers on DOM
+  updateJewels()
+
+
+
 } );
 
 
@@ -25,20 +40,30 @@ $( "#but" ).on( "click", function ()
 /* reveal number and add number to total score*/
 $( "#j1" ).on( "click", function ()
 {
+
   $( "#jn1" ).show()
-} )
+  totalScore.push( jewels[ 0 ] );
+  $( "#totalScore" ).text( "Total Score " + totalScore );
+
+} );
 $( "#j2" ).on( "click", function ()
 {
   $( "#jn2" ).show()
-} )
+  totalScore.push( jewels[ 1 ] );
+  $( "#totalScore" ).text( "Total Score " + totalScore );
+} );
 $( "#j3" ).on( "click", function ()
 {
   $( "#jn3" ).show()
-} )
+  totalScore.push( jewels[ 2 ] );
+  $( "#totalScore" ).text( "Total Score " + totalScore );
+} );
 $( "#j4" ).on( "click", function ()
 {
   $( "#jn4" ).show()
-} )
+  totalScore.push( jewels[ 3 ] );
+  $( "#totalScore" ).text( "Total Score " + totalScore );
+} );
 
 
 
@@ -68,5 +93,22 @@ function genGemNumbs ()
   // Return the Gem Numbers
   return gemNumbs;
 }
-// Generate and update all jems
+
+// Funtion to update jewel number text
+function updateJewels ( jewel1, jewel2, jewel3, jewel4 )
+{
+  jewel1 = jewels[ 0 ];
+  jewel2 = jewels[ 1 ];
+  jewel3 = jewels[ 2 ];
+  jewel4 = jewels[ 3 ];
+  $( "#jn1" ).text( jewel1 );
+  $( "#jn2" ).text( jewel2 );
+  $( "#jn3" ).text( jewel3 );
+  $( "#jn4" ).text( jewel4 );
+
+}
+
+
+
+
 
