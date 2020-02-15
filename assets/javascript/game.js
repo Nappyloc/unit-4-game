@@ -17,17 +17,31 @@ $( "#but" ).on( "click", function ()
   $( "#jn4" ).hide();
 
   // Generate Jewel Numbers
-
-
-
-
-
 } );
 
 
 
 // On Click Animations
 /* reveal number and add number to total score*/
+$( "#j1" ).on( "click", function ()
+{
+  $( "#jn1" ).show()
+} )
+$( "#j2" ).on( "click", function ()
+{
+  $( "#jn2" ).show()
+} )
+$( "#j3" ).on( "click", function ()
+{
+  $( "#jn3" ).show()
+} )
+$( "#j4" ).on( "click", function ()
+{
+  $( "#jn4" ).show()
+} )
+
+
+
 
 
 
@@ -44,19 +58,15 @@ function genGoal ( min, max )
   return goalNum;
 }
 
-// Funtion to generat random number from 1-12 on click of jewel
+// Funtion to generat random number on for jewel
 function genGemNumbs ()
 {
   var gemNumbs = [];
   for ( var i = 0; i < 4; i++ )
     // genreate a random number between 1 and 12
     gemNumbs.push( Math.floor( Math.random() * ( 12 - 30 + 1 ) ) + 30 )
-  return gemNumbs;
-
-
   // Return the Gem Numbers
-  // return gemNumbs;
-
+  return gemNumbs;
 }
 // Generate and update all jems
 
