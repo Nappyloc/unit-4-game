@@ -6,8 +6,7 @@ var wins = 0
 var losses = 0
 var totalScore = []
 var score = 0
-var jewel1 = jewels[ 0 ];
-var jewel2 = jewels[ 1 ];
+
 
 
 // Generate Goal and Hide Jewel text on start of Game
