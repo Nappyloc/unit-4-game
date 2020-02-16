@@ -2,11 +2,36 @@
 
 // Global Variables
 var jewels = genGemNumbs();
+var goal;
 var wins = 0
 var losses = 0
 var totalScore = []
 
-// Generate Goal and Hide Jewel text on start of Game
+// Document ready function
+
+$( document ).ready( function ()
+{
+  totalScore = []
+  $( "#totalScore" ).text( "Total Score: 0 " )
+  // Call function to generate the Goal
+
+  // Update the goal on the DOM
+  $( "#goal" ).text( "Goal: " + genGoal() )
+
+  // make jewels numbers disappear
+  $( "#jn1" ).hide()
+  $( "#jn2" ).hide()
+  $( "#jn3" ).hide()
+  $( "#jn4" ).hide()
+
+  // Generate Jewel Score Numbers
+  genGemNumbs()
+
+  // Update Jewel numbers on DOM
+  updateJewels()
+} )
+
+// On Click Function
 $( "#but" ).on( "click", function ()
 {
   totalScore = []
@@ -46,6 +71,7 @@ $( "#j1" ).on( "click", function ()
   total();
   $( "#totalScore" ).text( "Total Score: " + total() );
 
+
 } );
 $( "#j2" ).on( "click", function ()
 {
@@ -53,6 +79,7 @@ $( "#j2" ).on( "click", function ()
   totalScore.push( jewels[ 1 ] );
   total();
   $( "#totalScore" ).text( "Total Score: " + total() );
+
 } );
 $( "#j3" ).on( "click", function ()
 {
@@ -60,6 +87,7 @@ $( "#j3" ).on( "click", function ()
   totalScore.push( jewels[ 2 ] );
   total();
   $( "#totalScore" ).text( "Total Score: " + total() );
+
 } );
 $( "#j4" ).on( "click", function ()
 {
@@ -67,6 +95,7 @@ $( "#j4" ).on( "click", function ()
   totalScore.push( jewels[ 3 ] );
   total();
   $( "#totalScore" ).text( "Total Score: " + total() );
+
 } );
 
 
@@ -93,7 +122,7 @@ function genGemNumbs ()
   var gemNumbs = [];
   for ( var i = 0; i < 4; i++ )
     // genreate a random number between 1 and 12
-    gemNumbs.push( Math.floor( Math.random() * ( 12 - 30 + 1 ) ) + 30 )
+    gemNumbs.push( Math.floor( Math.random() * ( 12 - 1 + 1 ) ) + 1 )
   // Return the Gem Numbers
   return gemNumbs;
 }
@@ -117,13 +146,50 @@ function updateJewels ( jewel1, jewel2, jewel3, jewel4 )
 // Function to calculate the score
 function total ()
 {
+  // created the variable results to hold the sum of the array in total score
   var results = 0;
+  // loop through the array total score
   for ( var i = 0; i < totalScore.length; i++ )
   {
+    // resultes equals the sumof all attributes of total score
     results = results + totalScore[ i ];
 
   }
+  // return the results
   return results
+
+}
+
+// function to check for win or loss
+function winOrLoss ( totalScore )
+{
+  if ( totalScore > goal )
+  {
+    losses = losses + 1;
+    alert( "You Lose" );
+  }
+  reset();
+  if ( totalScore == goal )
+  {
+    wins = wins + 1
+    alert( "You Win" );
+  } else
+  {
+    alert( "Collect another Jewwl" );
+  }
+}
+
+// Reset Function
+function reset ()
+{
+  goal = 0;
+  totalScore = [];
+  $( "#jn1" ).hide()
+  $( "#jn2" ).hide()
+  $( "#jn3" ).hide()
+  $( "#jn4" ).hide()
+  $( "#totalScore" ).text( "Total Score: 0 " )
+  $( "#goal" ).text( "Goal: " + genGoal() )
 }
 
 
