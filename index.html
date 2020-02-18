@@ -11,23 +11,26 @@
       rel="stylesheet"
       href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
     />
+
     <!-- Added link to the jQuery library -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <!-- Java Script -->
-    <script src="./assets/javascript/game.js"></script>
 
     <!-- Added a link to Bootstrap-->
     <link
       rel="stylesheet"
       href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
     />
+    <!-- Reset -->
+    <link rel="stylesheet" type="text/html" href="/assets/css/reset.css" />
+    <!-- My CSS -->
+    <link rel="stylesheet" type="text/html" href="./assets/css/style.css" />
   </head>
-  <body>
+  <body class="justify-content-center">
     <!-- JumboTron Header -->
     <div class="jumbotron">
-      <h1 class="display-4 align-center text-center">Crystal Collector</h1>
+      <h1 class="display-2 text-center">Crystal Collector</h1>
       <a
-        class="btn btn-primary btn-lg align-center"
+        class="btn btn-primary btn-lg btn-block btn-dark"
         id="but"
         href="#"
         role="button"
@@ -39,11 +42,13 @@
       <!-- Instructions Row-->
       <div class="row">
         <div class="col">
-          <p class="text-center">Instructions:</p>
+          <p class="text-center display-4">Instructions:</p>
           <p class="text-center">
             Click on Start Game to get started! Click on a jewel to reveal your
-            first score. Select the right jewel combination to match the target
-            score and win!
+            first score.
+          </p>
+          <p class="text-center">
+            Select the right jewel combination to match the Goal and you win!
           </p>
         </div>
       </div>
@@ -68,7 +73,7 @@
             src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTIXU_N06JuC-VuU4xOKhXv_OhCIhm_FkSb027ylSD7EMZrP0B0"
             alt="Jewel 1"
           />
-          <p id="jn1">Jewel 1 Number</p>
+          <p class="text-center jewelnum" id="jn1">Jewel 1 Number</p>
         </div>
         <!-- Jewel 2  -->
         <div class="col-3" id="j2">
@@ -76,7 +81,7 @@
             src="https://i.pinimg.com/originals/8d/c3/3c/8dc33ca5708e2781ddd173699e129d4f.png"
             alt="Jewel 2"
           />
-          <p id="jn2">Jewel 2 Number</p>
+          <p class="text-center jewelnum" id="jn2">Jewel 2 Number</p>
         </div>
         <!-- Jewel 3 -->
         <div class="col-3" id="j3">
@@ -84,7 +89,7 @@
             src="https://i.ya-webdesign.com/images/gem-clipart-rhinestone-19.png"
             alt="Jewel 3"
           />
-          <p id="jn3">Jewel 3 Number</p>
+          <p class="text-center jewelnum" id="jn3">Jewel 3 Number</p>
         </div>
         <!-- Jewel 4 -->
         <div class="col-3" id="j4">
@@ -92,7 +97,7 @@
             src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSPPHxaAU-neyfqlN9SLkxEWDE4vlvgfLCKFXlCggjKJtGg4CrB"
             alt="Jewel 4"
           />
-          <p id="jn4">Jewel 4 Number</p>
+          <p class="text-center jewelnum" id="jn4">Jewel 4 Number</p>
         </div>
       </div>
     </div>

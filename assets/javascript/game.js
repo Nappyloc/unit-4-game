@@ -36,7 +36,7 @@ $( document ).ready( function ()
 
 
 
-// On Click Function
+// On Star Game Button Click Functions
 
 $( "#but" ).on( "click", function ()
 {
@@ -63,7 +63,7 @@ $( "#but" ).on( "click", function ()
 
 
 
-// On Click Animations
+// Jewel On Click Animations
 
 $( "#j1" ).on( "click", function ()
 {
@@ -189,6 +189,7 @@ function winOrLoss ()
   if ( userScore > goal )
   {
     losses = losses + 1;
+    $( "#losses" ).html( "Losses: " + losses );
     alert( "You Lose" );
     reset();
   }
@@ -196,6 +197,7 @@ function winOrLoss ()
   else if ( userScore == goal )
   {
     wins = wins + 1
+    $( "#wins" ).html( "Wins: " + wins );
     alert( "You Win" );
     reset();
   }
