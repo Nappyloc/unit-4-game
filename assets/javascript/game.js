@@ -33,7 +33,11 @@ $( document ).ready( function ()
   updateJewels()
 } )
 
+
+
+
 // On Click Function
+
 $( "#but" ).on( "click", function ()
 {
   totalScore = []
@@ -55,23 +59,23 @@ $( "#but" ).on( "click", function ()
   // Update Jewel numbers on DOM
   updateJewels()
 
-  // Calculate Score
-
-
-
 } );
 
 
 
 // On Click Animations
-/* reveal number and add number to total score*/
+
 $( "#j1" ).on( "click", function ()
 {
-
+  // show text number
   $( "#jn1" ).show()
+  // add jewel number to total score array
   totalScore.push( jewels[ 0 ] );
+  // calculate user score
   total();
+  // update user score on the DOM
   $( "#totalScore" ).text( "Total Score: " + total() );
+  //  Run win or loss function
   winOrLoss();
 
 
@@ -108,11 +112,6 @@ $( "#j4" ).on( "click", function ()
 
 
 
-
-
-
-
-
 // Funtion to generate the Goal (a random number that has a min and max)
 function genGoal ( min, max )
 {
@@ -124,6 +123,9 @@ function genGoal ( min, max )
   return goalNum;
 }
 
+
+
+
 // Funtion to generat random number on for jewel
 function genGemNumbs ()
 {
@@ -134,6 +136,9 @@ function genGemNumbs ()
   // Return the Gem Numbers
   return gemNumbs;
 }
+
+
+
 
 // Funtion to update jewel number text
 function updateJewels ( jewel1, jewel2, jewel3, jewel4 )
@@ -151,6 +156,9 @@ function updateJewels ( jewel1, jewel2, jewel3, jewel4 )
 
 }
 
+
+
+
 // Function to calculate the score
 function total ()
 {
@@ -164,23 +172,27 @@ function total ()
 
 
   }
+  // Update user score varialbe to contian the toal calculation
   userScore = results
   return results
 }
+
+
+
 
 // function to check for win or loss
 function winOrLoss ()
 {
   console.log( userScore, goal );
 
-
+  // If user score is greater than goal alert you lose and reset the game
   if ( userScore > goal )
   {
     losses = losses + 1;
     alert( "You Lose" );
     reset();
   }
-
+  // If the user score equals the goal alert you win and reset the game
   else if ( userScore == goal )
   {
     wins = wins + 1
@@ -188,6 +200,10 @@ function winOrLoss ()
     reset();
   }
 }
+
+
+
+
 
 // Reset Function
 function reset ()
