@@ -2,10 +2,12 @@
 
 // Global Variables
 var jewels = genGemNumbs();
-var goal;
+var goal = 0
 var wins = 0
 var losses = 0
 var totalScore = []
+var userScore = 0
+
 
 // Document ready function
 
@@ -70,6 +72,7 @@ $( "#j1" ).on( "click", function ()
   totalScore.push( jewels[ 0 ] );
   total();
   $( "#totalScore" ).text( "Total Score: " + total() );
+  winOrLoss();
 
 
 } );
@@ -79,6 +82,7 @@ $( "#j2" ).on( "click", function ()
   totalScore.push( jewels[ 1 ] );
   total();
   $( "#totalScore" ).text( "Total Score: " + total() );
+  winOrLoss();
 
 } );
 $( "#j3" ).on( "click", function ()
@@ -87,6 +91,7 @@ $( "#j3" ).on( "click", function ()
   totalScore.push( jewels[ 2 ] );
   total();
   $( "#totalScore" ).text( "Total Score: " + total() );
+  winOrLoss();
 
 } );
 $( "#j4" ).on( "click", function ()
@@ -95,6 +100,7 @@ $( "#j4" ).on( "click", function ()
   totalScore.push( jewels[ 3 ] );
   total();
   $( "#totalScore" ).text( "Total Score: " + total() );
+  winOrLoss();
 
 } );
 
@@ -112,6 +118,8 @@ function genGoal ( min, max )
 {
   // genreate a random number between 19 and 120
   var goalNum = Math.floor( Math.random() * ( 120 - 19 + 1 ) ) + 19;
+  // Update global goal variable
+  goal = goalNum
   // Return the random number
   return goalNum;
 }
@@ -154,28 +162,30 @@ function total ()
     // resultes equals the sumof all attributes of total score
     results = results + totalScore[ i ];
 
-  }
-  // return the results
-  return results
 
+  }
+  userScore = results
+  return results
 }
 
 // function to check for win or loss
-function winOrLoss ( totalScore )
+function winOrLoss ()
 {
-  if ( totalScore > goal )
+  console.log( userScore, goal );
+
+
+  if ( userScore > goal )
   {
     losses = losses + 1;
     alert( "You Lose" );
+    reset();
   }
-  reset();
-  if ( totalScore == goal )
+
+  else if ( userScore == goal )
   {
     wins = wins + 1
     alert( "You Win" );
-  } else
-  {
-    alert( "Collect another Jewwl" );
+    reset();
   }
 }
 
