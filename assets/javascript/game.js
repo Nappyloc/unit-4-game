@@ -41,7 +41,12 @@ $( document ).ready( function ()
 $( "#but" ).on( "click", function ()
 {
   totalScore = []
+  wins = 0
+  losses = 0
+
   $( "#totalScore" ).text( "Total Score: 0 " )
+  $( "#wins" ).text( "Wins: 0 " )
+  $( "#losses" ).text( "Losses: 0 " )
   // Call function to generate the Goal
 
   // Update the goal on the DOM
